@@ -47,16 +47,50 @@ export default function AddMovie() {
 
   return (
     <Container>
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4, borderBottom: "2px solid #3f51b5" }}>
-        <Typography variant="h2" color="textSecondary">Add New Movie</Typography>
-        <Button variant="contained" color="primary" onClick={() => history.push("/")}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 4,
+          borderBottom: "2px solid #3f51b5",
+        }}
+      >
+        <Typography variant="h2" color="textSecondary">
+          Add New Movie
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => history.push("/")}
+        >
           Cancel
         </Button>
       </Box>
 
-      <Card sx={{ padding: 4, boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)", borderRadius: "15px" }}>
-        <TextField fullWidth label="Title" variant="outlined" margin="normal" value={selectedTitle} onChange={(e) => setSelectedTitle(e.target.value)} />
-        <TextField fullWidth label="Poster URL" variant="outlined" margin="normal" value={selectedPoster} onChange={(e) => setSelectedPoster(e.target.value)} />
+      <Card
+        sx={{
+          padding: 4,
+          boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
+          borderRadius: "15px",
+        }}
+      >
+        <TextField
+          fullWidth
+          label="Title"
+          variant="outlined"
+          margin="normal"
+          value={selectedTitle}
+          onChange={(e) => setSelectedTitle(e.target.value)}
+        />
+        <TextField
+          fullWidth
+          label="Poster URL"
+          variant="outlined"
+          margin="normal"
+          value={selectedPoster}
+          onChange={(e) => setSelectedPoster(e.target.value)}
+        />
         <TextField
           fullWidth
           label="Genre"
@@ -91,7 +125,12 @@ export default function AddMovie() {
           onChange={(e) => setSelectedDescription(e.target.value)}
         />
         <Box sx={{ display: "flex", justifyContent: "flex-end", marginTop: 3 }}>
-          <Button variant="contained" color="secondary" size="large" onClick={postMovie}>
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            onClick={postMovie}
+          >
             Add Movie
           </Button>
         </Box>
