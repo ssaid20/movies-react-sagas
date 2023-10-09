@@ -1,4 +1,3 @@
-// React Router imports
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, Typography } from '@mui/material';
