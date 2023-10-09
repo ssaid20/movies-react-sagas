@@ -35,3 +35,24 @@ function* fetchDetails(action) {
     }
 }
 
+function* addMovie(action){
+    try {
+        yield axios.post('/api/movie/', action.payload);
+        // refresh movie list
+        yield put({type: 'FETCH_MOVIES'});
+    } catch (error) {
+        console.log("error on addMovie saga", error);
+    }
+}
+
+function* editMovie(action){
+    try {
+        // put request with id in params, other details in update object
+        yield axios.put(`/api/movie/${action.payload.id}`, action.payload.update);
+        // refresh movie list
+        yield put({type: 'FETCH_MOVIES'});
+        yield put ({type: 'FETCH_DETAILS', payload: {id: action.payload.id}})
+    } catch (error) {
+        console.log("error on editMovie saga", error);
+    }
+}
