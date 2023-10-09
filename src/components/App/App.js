@@ -18,12 +18,6 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div className="App">
-        <Typography variant="h1" align="center">
-          <TheatersIcon fontSize="large" color="secondary" /> 
-          the movies saga 
-          <TheatersIcon fontSize="large" color="secondary" />
-        </Typography>
-
         <Router>
           {/* route to Home */}
           <Route path="/" exact>

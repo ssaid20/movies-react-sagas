@@ -10,6 +10,7 @@ import {
   Typography,
   Tooltip,
   Container,
+  Box,
 } from "@mui/material";
 import "./MovieList.css";
 
@@ -29,28 +30,35 @@ function MovieList() {
   return (
     <Container>
       {/* Header section with title and Add Movie button */}
-      <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h2">MovieList</Typography>
+      <Box 
+        sx={{ 
+          display: "flex", 
+          justifyContent: "space-between",
+          backgroundColor: "#0b1f56",
+          padding: "1rem",
+          borderRadius: "8px",
+          marginBottom: "2rem"
+        }}
+      >
+        <Typography variant="h2" color="primary">Movies</Typography>
         <Button
-          sx={{ m: 1 }}
-          variant="outlined"
+          sx={{ m: 1, backgroundColor: "#3f51b5" }}
+          variant="contained"
           color="secondary"
           size="large"
           onClick={() => history.push("/add")}
         >
           Add Movie
         </Button>
-      </Container>
-
-      <br />
+      </Box>
 
       {/* Display movies in a grid format */}
       <Grid container sx={{ justifyContent: "center" }} spacing={3}>
         {movies.map((movie) => (
           <Grid item xs={3} key={movie.id}>
-            <Card>
-              <CardContent sx={{ textAlign: "center" }}>
-                <h4>{movie.title}</h4>
+            <Card sx={{ boxShadow: "3px 3px 5px 0px rgba(0,0,0,0.3)" }}>
+              <CardContent sx={{ textAlign: "center", backgroundColor: "#0b1f56" }}>
+                <Typography variant="h6" color="primary">{movie.title}</Typography>
                 {/* Tooltip provides additional context on hover */}
                 <Tooltip title="Click for more details">
                   {/* CardActionArea provides a visual feedback on hover */}
@@ -73,3 +81,4 @@ function MovieList() {
 }
 
 export default MovieList;
+
